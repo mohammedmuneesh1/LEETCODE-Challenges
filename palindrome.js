@@ -37,11 +37,11 @@ console.log(isPalindrome(-121))  //false
 
 //ANSWER 2
 
-// var isPalindrome = function(x) {
-//     const y = x.toString().split("").reverse().join("");
-//       if (y == x){
-//           return true
-//       }{
-//           return false
-//       }
-//   };
+var isPalindrome = function(x) {
+    const y = x.toString().split("").reverse().join("");
+      if (y == x){
+          return true
+      }{
+          return false
+      }
+  };
