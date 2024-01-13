@@ -1,5 +1,6 @@
 //QUESTION
 
+//EXAMPLE-1
 // Input: s = "aaabbb"
 // Output: true
 //Explanation:
@@ -8,7 +9,6 @@
 
 
 // Example 2:
-
 // Input: s = "abab"
 // Output: false
 // Explanation:
@@ -17,6 +17,7 @@
 
 
 //ANSWER
+
 const checkString =(s)=>{
     const arr = ['a','A']
     const indexOfA = -1 
@@ -35,3 +36,4 @@ const checkString =(s)=>{
 }
 console.log(checkString("bbb"))   //true
 console.log(checkString("aabba")) //false
+console.log(checkString("aaabb")) //true
