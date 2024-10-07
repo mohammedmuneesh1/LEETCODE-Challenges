@@ -1,28 +1,32 @@
-// Input: 
-// n = 10 
-// ["call","call","call"]
-// Output: [10,11,12]
-// Explanation: 
-// counter() = 10 // The first time counter() is called, it returns n.
-// counter() = 11 // Returns 1 more than the previous time.
-// counter() = 12 // Returns 1 more than the previous time.
+var createCounter = function(n) {
+    return function() {
+        return n++;
+    };
+};
 
-// var createCounter = function(n) {
-//     var count = n;
-//     var counter =function(){
-//         return count++;
-//     }
-//     return counter;
-// };
-// var counterFunction = createCounter(10);
+const counter = createCounter(10);
 
-// console.log(counterFunction())
-// console.log(counterFunction())
+console.log(counter()); //10
+console.log(counter()); //11
 
 
- function hello(n){
-    let count = n;
+notes//
 
-    return count++
-}
-console.log(hello(10))
+// It first uses n++ It returns the current value of n, and then increments n after the value has been returned.
+//When you call counter() for the first time, n is 10.
+//When you call counter() for the second time, n is 11.
+//when you call counter() for the thrird time, n is 12
+
+//A closure is created when the inner function (returned by createCounter),
+// is defined inside another function (in this case, inside createCounter), and it "remembers" the environment in which it was created.
+
+//Specifically, the returned function "remembers" the variable n from createCounter 
+//even after createCounter has finished executing. This allows the function returned by createCounter
+// to access and modify n even after the outer function has completed.
+
+
+//Why counter() remembers n:
+
+//Even though createCounter finishes executing, 
+//the returned function still has access to the variable n because of the closure.
+// This means that each time you call counter(), the same n is used and incremented.
